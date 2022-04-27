@@ -1,0 +1,46 @@
+diff --git a/kbscan.cpp b/kbscan.cpp
+index a152a24..967da7d 100644
+--- a/kbscan.cpp
++++ b/kbscan.cpp
+@@ -13,6 +13,9 @@
+ #define INTERFACE_PROTOCOL_NONE 0
+ 
+ #define HOLTEK_VID              0x04d9
++#define CM_VID                  0x2516
++#define CM_PID                  0x0059
++#define CM_BOOT_PID             0x005a
+ 
+ #define BOOT_PID                0x1000
+ 
+@@ -59,6 +62,7 @@ static const ZMap<DeviceType, DeviceInfo> known_devices = {
+     { DEV_TEX_YODA_II,      { "tex/yoda",           "Tex Yoda II",              HOLTEK_VID, TEX_YODA_II_PID,    BOOT_PID | TEX_YODA_II_PID,     PROTO_CYKB,     FW_ADDR_3400 } },
+     { DEV_MISTEL_MD600,     { "mistel/md600",       "Mistel Barocco MD600",     HOLTEK_VID, MISTEL_MD600_PID,   BOOT_PID | MISTEL_MD600_PID,    PROTO_CYKB,     FW_ADDR_3400 } },
+     { DEV_MISTEL_MD200,     { "mistel/md200",       "Mistel Freeboard MD200",   HOLTEK_VID, MISTEL_MD200_PID,   BOOT_PID | MISTEL_MD200_PID,    PROTO_CYKB,     FW_ADDR_3400 } },
++    { DEV_CM_PRO_S,         { "cm/pros",            "CoolerMaster MasterKeys",  CM_VID,     CM_PID,             CM_BOOT_PID,                    PROTO_CYKB,     FW_ADDR_3200 } },
+ };
+ 
+ static ZMap<zu32, DeviceType> known_ids;
+diff --git a/kbscan.h b/kbscan.h
+index b5764a4..1bd84ea 100644
+--- a/kbscan.h
++++ b/kbscan.h
+@@ -26,6 +26,7 @@ enum DeviceType {
+     DEV_TEX_YODA_II,    //!< Tex Yoda II
+     DEV_MISTEL_MD600,   //!< Mistel Barocco MD600
+     DEV_MISTEL_MD200,   //!< Mistel Freeboard MD200
++    DEV_CM_PRO_S,       //!< Cooler Master Master Keys Pro S White
+ 
+     DEV_QMK_POK3R,
+     DEV_QMK_POK3R_RGB,
+diff --git a/main.cpp b/main.cpp
+index 3ce9a70..5635028 100644
+--- a/main.cpp
++++ b/main.cpp
+@@ -74,6 +74,7 @@ const ZMap<ZString, DeviceType> devnames = {
+ 
+     { "md200",              DEV_MISTEL_MD200 },
+     { "freeboard",          DEV_MISTEL_MD200 },
++    { "cmpros",             DEV_CM_PRO_S},
+ };
+ 
+ // Functions
