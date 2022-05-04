@@ -14,6 +14,7 @@ This in turn produces a binary file that can be uploaded to the keyboard.
 # Firmware and their pack versions
 
 | Keyboard | Firmware Pack Version |
+|----------|-----------------------|
 | S RGB    | maaV101               |
 | M RGB    | maaV102               |
 | L RGB    | maaV101               |
