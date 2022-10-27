@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name "MBI5042")(type "KiCad")(uri "${KIPRJMOD}/MBI5042.kicad_sym")(options "")(descr ""))
+  (lib (name "HT32F52352")(type "KiCad")(uri "${KIPRJMOD}/HT32F52352.kicad_sym")(options "")(descr ""))
+  (lib (name "SMD_components")(type "KiCad")(uri "${KIPRJMOD}/SMD_components.kicad_sym")(options "")(descr ""))
+  (lib (name "25L4006E")(type "KiCad")(uri "${KIPRJMOD}/25L4006E.kicad_sym")(options "")(descr ""))
+)
