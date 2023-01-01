@@ -2,11 +2,12 @@ This repository aims to document the reverse engineering effort behind Cooler Ma
 
 As a result you can:
  - re-flash the original firmware with a different key map
- - flash QMK [see here](https://github.com/m-radomski/qmk_masterkeys)
+ - flash QMK [see here](https://github.com/mateuszradomski/qmk_masterkeys)
  - write your own bare metal firmware
 
 Currently **only the Masterkeys Pro S White** is tested and proved working.
 If you have any other keyboard from this series you can contribute by expanding the current knowledge.
+Checkout the work of [hansemro](https://github.com/hansemro) in the Issues Tab right now.
 Everything from this point on is written from the point of view of the Pro S White.
 
 # Hardware specification
@@ -33,9 +34,9 @@ You can use it in your own firmware if you need, the documentation is inside the
 
 The LED driver has 16 output pins, it's used in combination with 8 pins from the MCU to form a matrix.
 Positive voltage is emitted by the driver to a particular column and the LED will glow if the row has been pulled low by the MCU.
-Currently the LED driver is not used in the QMK firmware, but work is being done on getting it working!
-Documentation for this driver is hard to get but [ChaoticEnigma](https://github.com/ChaoticEnigma) and this [post](https://www.reddit.com/r/AskElectronics/comments/db348y/failling_to_find_mbia043gp_mbia043gp_b0n639cgha/) give us the answers.
-Since MBI5040 chip is similar I'm storing it's documentation inside the `docs` directory, but you can get the specific documentation from the [pok3r_re_firmware](https://github.com/pok3r-custom/pok3r_re_firmware) repo.
+Because of the amazing work done by [hansemro](https://github.com/hansemro) in RE of lighting for Pro S RGB which shares the same chip with Pro S White, lighting is now supported in QMK.
+The documentation for the chip does not really exist but many things are similar across the chips, for general hang of how the chip work checkout the documentation to MBI5040 in the docs folder.
+And for special instructions that are supported by the MBIA043GP see the accompanying .md file, information there is copied from hansemro's issue for the Pro S RGB model.
 
 # Original firmware
 
